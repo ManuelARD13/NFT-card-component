@@ -1,0 +1,159 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+  --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Utility Colors */
+
+.cyan-font {
+  color: var(--cyan);
+}
+
+/* Universal default values */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: 'Outfit', sans-serif;
+  color: var(--soft-blue);
+}
+
+/* Styles */
+
+main  {
+  background-color: var(--very-dark-blue-main-bg);
+  padding: 17.1vh 0;
+}
+
+footer {
+  height: 2rem;
+  text-align: center;
+  background-color: var(--very-dark-blue-card-bg);
+}
+
+footer a {
+  color: var(--cyan);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0.7em 0;
+}
+
+h2:hover, .seller-container span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+p {
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* containers */
+
+.NFT-card {
+  max-width: 22rem;
+  margin: 0 auto;
+  padding: 1.2em;
+  background-color: var(--very-dark-blue-card-bg);
+  border-radius: 0.75em;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 0.5em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.1s ease-in;
+}
+
+.image-container:hover {
+  background: var(--cyan);
+}
+
+.image-container:hover > img  {
+  opacity: 0.2;
+  transition: 0.1s ease-in;
+}
+
+.image-container:hover > svg {
+  opacity: 1;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+
+.seller-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid var(--very-dark-blue-line);
+  padding: 1em 0 0 0;
+}
+
+/* components */
+
+.image-container svg {
+  position: absolute;
+  opacity: 0;
+  top: 45%;
+  left: 43%;
+}
+
+.seller-container img {
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.seller-container span {
+  color: var(--white);
+}
+
+@media screen and (max-width: 400px) {
+  .NFT-card {
+    max-width: 90%;
+  }
+  body {
+    font-size: 1rem;
+  } 
+  main {
+    padding: calc(92vh - 39.6rem - 2rem / 2) 0;
+  }
+  footer {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
